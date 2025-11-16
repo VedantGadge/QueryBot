@@ -44,14 +44,6 @@
 
     <div id="chat" class="chat" role="log" aria-live="polite"></div>
 
-    <!-- Modal for showing SQL and table details -->
-    <div id="resultModal" class="modal-overlay">
-        <div class="modal-content">
-            <span class="modal-close" onclick="closeModal()">&times;</span>
-            <h2 class="modal-title">Query Results</h2>
-            <div id="modalBody"></div>
-        </div>
-    </div>
 
     <!-- Upload confirmation modal (replaces native confirm) -->
     <div id="uploadModal" class="modal-overlay">
@@ -162,32 +154,21 @@
     }
 
     function openModal(sqlContent, tableHtml) {
-        const modalBody = document.getElementById('modalBody');
         let content = '';
-
         if (sqlContent) {
-            content += '<div style="margin-bottom:20px;"><h3 style="margin-top:0;">SQL Query</h3><div class="sql">' + escapeHtml(sqlContent) + '</div></div>';
+            content += '<div style="margin-bottom:12px;"><strong>SQL Query:</strong><div class="sql">' + escapeHtml(sqlContent) + '</div></div>';
         }
-
         if (tableHtml) {
-            content += '<div><h3 style="margin-top:0;">Results Table</h3>' + tableHtml + '</div>';
+            content += '<div><strong>Results:</strong>' + tableHtml + '</div>';
         }
-
-        modalBody.innerHTML = content;
-        document.getElementById('resultModal').classList.add('active');
+        if (content) {
+            appendMessage('assistant', content);
+        }
     }
 
     function closeModal() {
-        document.getElementById('resultModal').classList.remove('active');
+        // no longer needed for inline display
     }
-
-    // Close modal when clicking outside of it
-    window.addEventListener('click', (e) => {
-        const modal = document.getElementById('resultModal');
-        if (e.target === modal) {
-            closeModal();
-        }
-    });
 
     function escapeHtml(s){
         return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
@@ -222,20 +203,19 @@
             if (body?.nlAnswer) appendAssistantText(body.nlAnswer);
 
             // Decide whether to auto-show SQL/table: only when the user explicitly asks to show or display
-            // (strict — do NOT trigger on ambiguous nouns like 'table' or 'rows' alone)
             const showKeywords = /\b(show|show me|show sql|show table|show rows|display|display me|display the|display rows|list rows|table format|in table|table view)\b/i;
             const shouldAutoShow = showKeywords.test(text);
 
-            // Collect SQL and table for modal display
+            // Collect SQL and table for inline display
             let sqlContent = '';
             let tableHtml = '';
 
-            // SQL: collect for modal
+            // SQL: collect for inline display
             if (body?.sql && shouldAutoShow) {
                 sqlContent = body.sql;
             }
 
-            // Table rows: collect for modal
+            // Table rows: collect for inline display
             const rows = body?.rows || [];
             if (rows.length > 0 && shouldAutoShow) {
                 const cols = Object.keys(rows[0]);
@@ -250,7 +230,7 @@
                 tableHtml += '</tbody></table></div>';
             }
 
-            // Open modal if we have SQL or table to show
+            // Display SQL and table inline in chat
             if (shouldAutoShow && (sqlContent || tableHtml)) {
                 openModal(sqlContent, tableHtml);
             } else if (!rows.length && shouldAutoShow) {
