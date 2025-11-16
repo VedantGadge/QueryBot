@@ -17,8 +17,8 @@ QueryBot is a modern web application that transforms natural language questions 
 2. Configure `src/main/resources/application.properties`:
    ```properties
    spring.datasource.url=jdbc:postgresql://localhost:5432/querybot
-   spring.datasource.username=postgres
-   spring.datasource.password=vedant1512
+   spring.datasource.username=your-postgres-username-here
+   spring.datasource.password=your-postgres-password-here
    llm.api.key=your-openrouter-key-here
    ```
 3. Run `mvn clean install && mvn spring-boot:run`
