@@ -369,14 +369,6 @@ Tests exist in `src/test/java/com/vedant/querybot/`.
 
 ---
 
-## 📞 Support
 
-For issues or questions, check:
-- Logs at `target/logs/` (if configured)
-- OpenRouter API status: https://status.openrouter.ai
-- PostgreSQL connection: `psql -U postgres -d querybot`
-
----
-
-**Built with ❤️ using Spring Boot & AI**
+**Built with ❤️ by VG using Spring Boot & AI**
 
