@@ -1,0 +1,92 @@
+[
+  {
+    "order_id": 101,
+    "customer": "Amit Sharma",
+    "category": "Electronics",
+    "product": "Smartphone",
+    "amount": 18999,
+    "quantity": 1,
+    "date": "2024-01-12"
+  },
+  {
+    "order_id": 102,
+    "customer": "Riya Patel",
+    "category": "Clothing",
+    "product": "Jacket",
+    "amount": 2999,
+    "quantity": 2,
+    "date": "2024-01-15"
+  },
+  {
+    "order_id": 103,
+    "customer": "John Mathews",
+    "category": "Furniture",
+    "product": "Office Chair",
+    "amount": 7499,
+    "quantity": 1,
+    "date": "2024-02-03"
+  },
+  {
+    "order_id": 104,
+    "customer": "Neha Gupta",
+    "category": "Electronics",
+    "product": "Bluetooth Speaker",
+    "amount": 1599,
+    "quantity": 3,
+    "date": "2024-02-18"
+  },
+  {
+    "order_id": 105,
+    "customer": "Rahul Verma",
+    "category": "Groceries",
+    "product": "Rice Bag",
+    "amount": 899,
+    "quantity": 1,
+    "date": "2024-02-20"
+  },
+  {
+    "order_id": 106,
+    "customer": "Sneha Rao",
+    "category": "Clothing",
+    "product": "T-shirt",
+    "amount": 499,
+    "quantity": 4,
+    "date": "2024-03-02"
+  },
+  {
+    "order_id": 107,
+    "customer": "Deepak Singh",
+    "category": "Electronics",
+    "product": "Earbuds",
+    "amount": 1299,
+    "quantity": 1,
+    "date": "2024-03-05"
+  },
+  {
+    "order_id": 108,
+    "customer": "Priya Sen",
+    "category": "Beauty",
+    "product": "Face Cream",
+    "amount": 299,
+    "quantity": 2,
+    "date": "2024-03-09"
+  },
+  {
+    "order_id": 109,
+    "customer": "Vishal Kumar",
+    "category": "Groceries",
+    "product": "Cooking Oil",
+    "amount": 199,
+    "quantity": 3,
+    "date": "2024-03-11"
+  },
+  {
+    "order_id": 110,
+    "customer": "Karan Doshi",
+    "category": "Furniture",
+    "product": "Study Table",
+    "amount": 5999,
+    "quantity": 1,
+    "date": "2024-03-20"
+  }
+]

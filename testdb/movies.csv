@@ -1,0 +1,16 @@
+MovieID,Title,Genre,ReleaseYear,Director,Rating,BoxOffice_Millions,UserScore
+301,"Quantum Echo","Sci-Fi",2020,"Alex Garland","R",150.5,8.1
+302,"The Silent Baker","Mystery",2022,"Jane Campion","PG-13",89.1,7.4
+303,"Lost in Bloom","Drama",2021,"Barry Jenkins","PG",45.2,8.8
+304,"Ironclad Vengeance","Action",2023,"Chad Stahelski","R",210.0,7.9
+305,"Whispers in the Code","Thriller",2022,"Denis Villeneuve","PG-13",112.8,8.3
+306,"The Last Laugh Lounge","Comedy",2020,"Taika Waititi","R",65.7,7.1
+307,"Nomad's Sky","Adventure",2021,"Chloe Zhao","PG",98.3,7.6
+308,"City of Glass","Drama",2023,"Greta Gerwig","R",33.1,6.9
+309,"The Starlight Heist","Crime",2022,"Steve McQueen","PG-13",74.9,7.2
+310,"Neptune's Wake","Horror",2023,"Jordan Peele","R",130.4,8.5
+311,"The Clockwork Garden","Fantasy",2021,"Guillermo del Toro","PG-13",105.6,8.0
+312,"Harbor Lights","Romance",2022,"Celine Sciamma","PG",22.5,7.7
+313,"Apex Runners","Action",2023,"George Miller","R",301.2,8.6
+314,"The Coral Key","Animation",2022,"Pete Docter","G",450.8,9.0
+315,"Midnight Diner","Indie",2021,"Jim Jarmusch","R",5.2,7.3
