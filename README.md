@@ -280,29 +280,6 @@ CREATE TABLE query_history (
 );
 ```
 
----
-
-## 🛠️ Development Tips
-
-### Running Tests
-```bash
-mvn test
-```
-Tests exist in `src/test/java/com/vedant/querybot/`.
-
-### Local Debug
-1. Set `spring.jpa.show-sql=true` in `application.properties` to see SQL
-2. Logs available at `INFO` level (see `QueryService`, `LLMService`)
-3. Use browser DevTools (F12) to inspect `/api/query/nl` requests/responses
-
-### Extending Features
-- **Add New File Format:** Update `FileParser.parse()` method
-- **Change LLM Model:** Update `LLMService.generateSqlFromNl()` payload ("model" field)
-- **Improve Schema Detection:** Enhance `SchemaGenerator` logic
-- **Add User Authentication:** Extend `QueryController` with `@Authentication` and user IDs
-
----
-
 ## 📝 Example Workflow
 
 1. **User uploads** `sales.csv`:
@@ -341,31 +318,6 @@ Tests exist in `src/test/java/com/vedant/querybot/`.
 | **Parsing** | OpenCSV, Apache POI, Jackson |
 | **Frontend** | Vanilla HTML/CSS/JavaScript |
 | **Build** | Maven |
-
----
-
-## 🚀 Production Checklist
-
-- [ ] Move API keys to environment variables
-- [ ] Set `spring.jpa.hibernate.ddl-auto=validate` (don't auto-update schema)
-- [ ] Enable HTTPS
-- [ ] Add rate limiting for `/api/query/nl` and `/api/files/upload`
-- [ ] Implement user authentication & multi-tenant support
-- [ ] Add query timeout & result row limits
-- [ ] Set up database backups
-- [ ] Monitor API usage & costs (OpenRouter charges per token)
-- [ ] Implement proper logging & error tracking
-
----
-
-## 💡 Future Enhancements
-
-- **Multi-Table Joins:** Support querying across multiple uploaded tables
-- **Query Visualization:** Charts & graphs for numerical results
-- **Saved Queries:** Bookmark and re-run favorite queries
-- **Export Results:** CSV/PDF download option
-- **Query Analytics:** Dashboard showing most-asked questions
-- **Advanced Filtering:** UI controls for filtering results without rephrasing
 
 ---
 
