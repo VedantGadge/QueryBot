@@ -17,8 +17,8 @@ QueryBot is a modern web application that transforms natural language questions 
 2. Configure `src/main/resources/application.properties`:
    ```properties
    spring.datasource.url=jdbc:postgresql://localhost:5432/querybot
-   spring.datasource.username=postgres
-   spring.datasource.password=vedant1512
+   spring.datasource.username=your-postgres-username-here
+   spring.datasource.password=your-postgres-password-here
    llm.api.key=your-openrouter-key-here
    ```
 3. Run `mvn clean install && mvn spring-boot:run`
@@ -280,29 +280,6 @@ CREATE TABLE query_history (
 );
 ```
 
----
-
-## 🛠️ Development Tips
-
-### Running Tests
-```bash
-mvn test
-```
-Tests exist in `src/test/java/com/vedant/querybot/`.
-
-### Local Debug
-1. Set `spring.jpa.show-sql=true` in `application.properties` to see SQL
-2. Logs available at `INFO` level (see `QueryService`, `LLMService`)
-3. Use browser DevTools (F12) to inspect `/api/query/nl` requests/responses
-
-### Extending Features
-- **Add New File Format:** Update `FileParser.parse()` method
-- **Change LLM Model:** Update `LLMService.generateSqlFromNl()` payload ("model" field)
-- **Improve Schema Detection:** Enhance `SchemaGenerator` logic
-- **Add User Authentication:** Extend `QueryController` with `@Authentication` and user IDs
-
----
-
 ## 📝 Example Workflow
 
 1. **User uploads** `sales.csv`:
@@ -344,39 +321,6 @@ Tests exist in `src/test/java/com/vedant/querybot/`.
 
 ---
 
-## 🚀 Production Checklist
 
-- [ ] Move API keys to environment variables
-- [ ] Set `spring.jpa.hibernate.ddl-auto=validate` (don't auto-update schema)
-- [ ] Enable HTTPS
-- [ ] Add rate limiting for `/api/query/nl` and `/api/files/upload`
-- [ ] Implement user authentication & multi-tenant support
-- [ ] Add query timeout & result row limits
-- [ ] Set up database backups
-- [ ] Monitor API usage & costs (OpenRouter charges per token)
-- [ ] Implement proper logging & error tracking
-
----
-
-## 💡 Future Enhancements
-
-- **Multi-Table Joins:** Support querying across multiple uploaded tables
-- **Query Visualization:** Charts & graphs for numerical results
-- **Saved Queries:** Bookmark and re-run favorite queries
-- **Export Results:** CSV/PDF download option
-- **Query Analytics:** Dashboard showing most-asked questions
-- **Advanced Filtering:** UI controls for filtering results without rephrasing
-
----
-
-## 📞 Support
-
-For issues or questions, check:
-- Logs at `target/logs/` (if configured)
-- OpenRouter API status: https://status.openrouter.ai
-- PostgreSQL connection: `psql -U postgres -d querybot`
-
----
-
-**Built with ❤️ using Spring Boot & AI**
+**Built with ❤️ by VG using Spring Boot & AI**
 
