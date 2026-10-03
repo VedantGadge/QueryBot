@@ -319,8 +319,4 @@ CREATE TABLE query_history (
 | **Frontend** | Vanilla HTML/CSS/JavaScript |
 | **Build** | Maven |
 
----
-
-
-**Built with ❤️ by VG using Spring Boot & AI**
 
